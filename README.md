@@ -1,1 +1,1 @@
-# score
+https://andriyvelychko.github.io/score/
