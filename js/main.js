@@ -4,12 +4,20 @@ $(function(){
         $('.menu').slideToggle(400)
     })
     //LOADER
-    $(window).on('load', function () {
+    /*$(window).on('load', function () {
         var $preloader = $('#p_prldr'),
             $svg_anm = $preloader.find('.svg_anm');
         $svg_anm.fadeOut();
         $preloader.delay(500).fadeOut('slow');
-    });
+    });*/
+    var $loading = $('#p_prldr').hide();
+    $(document)
+      .ajaxStart(function () {
+        $loading.show();
+      })
+      .ajaxStop(function () {
+        $loading.hide();
+      });
     //Плавный скрол
     var $page = $('html, body');
     $('a[href*="#"]').click(function () {
